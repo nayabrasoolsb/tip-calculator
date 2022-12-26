@@ -24,7 +24,8 @@ function changeHandler() {
     100 /
     parseInt(no_of_people.value);
   document.querySelector(".tip-price").innerHTML = tip;
-  document.querySelector(".total-price").innerHTML = parseInt(bill.value) + parseInt(tip);
+  document.querySelector(".total-price").innerHTML =
+    parseInt(bill.value) + parseInt(tip);
 }
 
 bill.addEventListener("change", changeHandler);
@@ -44,3 +45,10 @@ tips.forEach((btn) =>
     }
   }),
 );
+document.querySelector(".reset").addEventListener("click", () => {
+  bill.value = 0;
+  currDiscount = 0;
+  removeClass("");
+  document.querySelector(".tip-price").innerHTML = 0;
+  document.querySelector(".total-price").innerHTML = 0;
+});
