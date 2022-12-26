@@ -14,18 +14,17 @@ let currDiscount = 0;
 let bill = document.querySelector("#bill");
 let no_of_people = document.querySelector("#no-of-people");
 function changeHandler() {
-  if (!currDiscount && !bill.innerHTML && !no_of_people.innerHTML) {
+  if (!currDiscount || !bill.value || !no_of_people.value) {
     return;
   }
-  console.log(currDiscount);
-  console.log(bill.value);
   let tip =
     (parseInt(currDiscount) * parseInt(bill.value)) /
     100 /
     parseInt(no_of_people.value);
   document.querySelector(".tip-price").innerHTML = tip;
   document.querySelector(".total-price").innerHTML =
-    parseInt(bill.value) + parseInt(tip);
+    parseInt(bill.value) +
+    (parseInt(currDiscount) * parseInt(bill.value)) / 100;
 }
 
 bill.addEventListener("change", changeHandler);
@@ -33,7 +32,6 @@ no_of_people.addEventListener("change", changeHandler);
 
 tips.forEach((btn) =>
   btn.addEventListener("click", () => {
-    // console.log(btn);
     if (btn.classList.contains("background")) {
       btn.classList.remove("background");
     } else {
@@ -46,9 +44,10 @@ tips.forEach((btn) =>
   }),
 );
 document.querySelector(".reset").addEventListener("click", () => {
-  bill.value = 0;
+  bill.value = "";
   currDiscount = 0;
+  no_of_people.value = "";
   removeClass("");
-  document.querySelector(".tip-price").innerHTML = 0;
-  document.querySelector(".total-price").innerHTML = 0;
+  document.querySelector(".tip-price").innerHTML = "$ 0.00";
+  document.querySelector(".total-price").innerHTML = "$ 0.00";
 });
