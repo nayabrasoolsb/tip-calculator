@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="styleSheet" href="style.css" />
+    <title>Tip Calculator</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading">
+        <h2>
+          SPLI <br />
+          TTER
+        </h2>
+      </div>
+      <div class="container">
+        <div class="left">
+          <div class="children">
+            <label class="sub-head" for="bill">Bill</label><br /><br />
+            <input type="text" name="bill" id="bill" placeholder="0" />
+          </div>
+          <div class="tip-container children">
+            <div class="sub-head">Select Tip %</div>
+            <div class="tip-main">
+              <div class="tip">5%</div>
+              <div class="tip">10%</div>
+              <div class="tip">15%</div>
+              <div class="tip">25%</div>
+              <div class="tip">50%</div>
+              <div class="custom">Custom</div>
+            </div>
+          </div>
+          <div class="children">
+            <label class="sub-head" for="no-of-people">Number of People</label
+            ><br /><br />
+            <input
+              type="text"
+              name="no-of-people"
+              id="no-of-people"
+              placeholder="0" />
+          </div>
+        </div>
+        <div class="right">
+          <div class="tip-amount">
+            <div>
+              Tip Amount <br />
+              /person
+            </div>
+            <div class="price tip-price">$0.00</div>
+          </div>
+          <div class="total-amount">
+            <div>
+              Total Amount <br />
+              /person
+            </div>
+            <div class="price total-price">$0.00</div>
+          </div>
+          <div class="reset"><button>Reset</button></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
